@@ -1,0 +1,13 @@
+﻿一、java源文件结构：
+1.注释（版权所有等）
+2.包名package
+3.import
+4.类的注释
+5.类声明class
+6.成员变量声明(默认顺序为public->procted->private)
+7.构造器（通过注解生成）
+8.公有/私有方法
+二、命名
+方法名/变量名：驼峰式（第二个单词首字母大写）
+三、eclipse插件checkstyle安装
+Help-->Eclipse Marketplace-->Find-->checkstyle-->Install-->Restart Now

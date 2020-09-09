@@ -1,0 +1,47 @@
+一、类和对象类对象的关系
+类是对象的抽象，而对象是类的具体实例。 类是抽象的，不占用内存，而对象是具体的，占用存储空间。 
+类是用于创建对象的蓝图，它是一个定义包括在特定类型的对象中的方法和变量的软件模板。
+
+
+二、声明一个类
+class 类名称{
+    属性
+    方法
+    }
+注解：
+声明一个类需要通过一个关键字class
+
+
+三、声明一个类实例（声明一个对象、引用、调用类的方法）：
+package classdemo;
+class Person{
+    String name;
+    int age;
+    public void tell(){
+        System.out.println("姓名："+name+"   "+"性别："+age);
+    }
+}
+public class ClassDmeo01 {
+    public static void main(String[] args) {
+        /*
+       创建对象
+       赋值：对象.属性
+       调用：对象.方法
+         */
+        Person per = null;  //声明
+        //per = new Person();  //实例化操作，通过关键字new来实例化
+        //Person per = new Person();//声明并实例化
+        per.name = "张三";
+        per.age = 30;
+        per.tell();
+        /*
+        * Exception in thread "main" java.lang.NullPointerException
+        * 空指针异常
+        * 没有实例化，就没有开辟堆内存，栈指针就没有指向
+        * */
+    }
+}
+
+四、toString()快速自动调用，重写
+Source-->Generate toString-->Select-->Ok
+

@@ -1,0 +1,52 @@
+﻿jdk版本
+jdk-8u131-x64 
+用户名/密码
+10.43.173.180 ami/mail
+指令：
+ami@ami-db:~$ ldapsearch -x -LLL -h ami-db -p 389 -D 'cn=root' -w secret '(maillogin=00000000002008)'
+输出：
+dn: mail=00000002008_2@ezweb.ne.jp,dc=ezweb,dc=ne,dc=jp
+airCompanyCode: 0700
+mailLogin: 00000000002008
+mailPasswordType: C
+objectClass: top
+objectClass: person
+objectClass: mailuser
+objectClass: mailuserprefs
+objectClass: msguser
+objectClass: msguserprefs
+objectClass: maillocaluserprefs
+objectClass: airObjects
+objectClass: apsUserPrefs
+mailMessageStore: dummy
+telephoneNumber: 00000002008
+airMigrationStatus: 1
+airAuthPassword: LoginPW1
+plnFwdEnabled: 0
+mailboxId: 1566356190276
+plnFwdKeep: 1
+airWebmailStatus: 0
+airServicePackageNumber: 1
+airPushType: 1
+airSmartPassStatus: 0
+mailAutoReplyHost: dummy
+mailAlternateAddress: 00000002008@ezweb.ne.jp
+mailSymnAVOutboundVirusAction: Allow
+mailPassword: password
+mailboxStatus: A
+airMailLogin: 3igwtbkz
+airMailPassword: G3Nbhnjw
+airNotificationType: 4
+airImapStatus: 1
+adminPolicyDn: cn=4001000000000000,cn=admin root
+sn: 00000002008_2@ezweb.ne.jp
+cn: 00000002008_2@ezweb.ne.jp
+mail: 00000002008_2@ezweb.ne.jp 
+[‎10/‎17/‎2019 11:16 AM] Wang, Xiao-Bin: 
+实现举例：
+GET http://[ip]:[port]/ldap/user/[id]
+JSON
+使用：
+maven,tomcat|springboot
+[‎10/‎17/‎2019 11:17 AM] Wang, Xiao-Bin: 
+junit+powermock

@@ -1,0 +1,144 @@
+接口
+        如果类包含了一个接口，但是没有实现该接口定义的全部方法，那么必须将该类声明为abstract
+
+        使用关键字interface定义接口
+
+        实现接口：
+            定义一个或多个实现类
+            为了实现接口，在类定义中需要包含implements子句，然后创建接口定义的方法
+            如果类需要实现多个接口，多个接口之间用逗号隔开
+            实现接口的方法必须被声明为public
+
+        接口可扩展
+            接口可以通过关键字extends继承另一个接口，语法和继承类相同
+            如果类实现的接口继承自另一个接口，那么类必须实现在接口继承中定义的所有方法
+
+
+
+instanceof含义
+
+        instanceof用来判断内存中实际对象A是不是B类型
+
+        出现这种情况经常是需要强制转换的时候
+
+        class Dog extends Animal
+        譬如dog定义了自己的方法wangwang
+        Animal anAnimal = new Dog();
+
+        此时不能直接调用anAnimal.wangwang方法
+
+        但是可以
+        if( anAnimal instanceof Dog){
+        Dog dog = (Dog)anAnimal;
+        dog.wangwang就可以调用了
+        }
+
+
+
+使用Lombok简化代码
+
+        @Data注解，他包含了：@Getter @Setter @ToString @EqualsAndHashCode RequiredArgsConstructor注解
+        @AllArgsConstructor用来指定全参数构造器，
+        @NoArgsConstructor用来指定无参数构造器，
+        @RequiredArgsConstructor用来指定参数（采用静态方法of访问）
+
+                生成构造方法
+
+                如果我们要给Community实体类生成构造方法，那么可以如下代码示例：
+
+                public class Community {
+                    private String communityId;
+                    private String name;
+                    private String title;
+                    private int type;
+                    public Community(String communityId, String name, String title, int type) {
+                        this.communityId = communityId;
+                        this.name = name;
+                        this.title = title;
+                        this.type = type;
+                    }
+                    public Community() {
+                    }
+                    public Community(String communityId, String name) {
+                        this.communityId = communityId;
+                        this.name = name;
+                    }
+                }
+                可以看到很麻烦，也很混乱，如果使用lombok则变得清晰简洁：
+
+                @AllArgsConstructor
+                @NoArgsConstructor
+                @RequiredArgsConstructor(staticName="of")
+                class Community {
+                    private String communityId;
+                    @NonNull private String name;
+                    @NonNull private String title;
+                    private int type;
+                }
+
+                生成equals、hashcode、toString
+
+                我们在来看，如果需要生成equals、hashcode、toString呢？按照平常的做法：
+
+                public class Community {
+                    private String communityId;
+                    private String name;
+                    private String title;
+                    private int type;
+                    @Override
+                    public boolean equals(Object o) {
+                        if (this == o) { return true; }
+                        if (o == null || getClass() != o.getClass()) { return false; }
+                        Community community = (Community)o;
+                        if (type != community.type) { return false; }
+                        if (communityId != null ? !communityId.equals(community.communityId) : community.communityId != null) {
+                            return false;
+                        }
+                        if (name != null ? !name.equals(community.name) : community.name != null) { return false; }
+                        return title != null ? title.equals(community.title) : community.title == null;
+                    }
+                    @Override
+                    public int hashCode() {
+                        int result = communityId != null ? communityId.hashCode() : 0;
+                        result = 31 * result + (name != null ? name.hashCode() : 0);
+                        result = 31 * result + (title != null ? title.hashCode() : 0);
+                        result = 31 * result + type;
+                        return result;
+                    }
+                    @Override
+                    public String toString() {
+                        return "Community{" +
+                            "communityId='" + communityId + '\'' +
+                            ", name='" + name + '\'' +
+                            ", title='" + title + '\'' +
+                            ", type=" + type +
+                            '}';
+                    }
+                }
+                可以看到，代码相当的恼人，如果使用lombok：
+
+                @ToString
+                @EqualsAndHashCode
+                class Community {
+                    private String communityId;
+                    private String name;
+                    private String title;
+                    private int type;
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

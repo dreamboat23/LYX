@@ -1,0 +1,5 @@
+Java：利用I/O流读取文件内容https://blog.csdn.net/xuehyunyu/article/details/77873420
+Java文件IO流的操作总结https://www.cnblogs.com/lingyejun/p/9744509.html
+Java两种方法统计单词个数https://blog.csdn.net/weixin_42128813/article/details/86686339
+统计单词Javahttps://www.cnblogs.com/sengzhao666/p/10860480.html
+jdk8:map.getOrDefault：https://my.oschina.net/u/1417838/blog/1501635

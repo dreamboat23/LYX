@@ -1,0 +1,17 @@
+class A() {}
+
+A a = new A();  //定义了一个A的对象a
+
+class B() extends A() {}
+
+B b = new B();  //定义了一个B的对象b
+
+class C() {}    
+
+C c = new C();  //定义了一个C的对象c
+
+Vector<A> v = new Vector(); //定义了一个容器v，其中可以存储的数据类型为A和A的子类
+v.add(a);    //添加一个数据类型为A的数据a
+v.add(b);    //添加一个数据类型为B的数据b，B继承自A，则该句语法正确
+v.add(c);    //添加一个数据类型为C的数据c，C不继承自A，则该句语法错误
+

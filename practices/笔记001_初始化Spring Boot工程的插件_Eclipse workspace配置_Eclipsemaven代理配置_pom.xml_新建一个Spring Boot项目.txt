@@ -1,0 +1,82 @@
+1.初始化Spring Boot工程的插件:
+Help-->Eclipse Marketplace-->Find-->Spring Tools 3 Add-On for Spring Tools 4.3.9.10.RELEASE-->Install-->Restart Now
+
+2.Eclipse workspace配置：
+File-->Swich Workspace-->Other...-->Workspace-->C:\JAVA_learn\Java-practice
+（与fork上clone的项目文件地址一致）
+
+3.Eclipse代理配置：
+Window-->Preferences-->General-->Network Connection
+（1）-->Active Provider-->Manual;
+（2）-->Http/Https-->proxy.houston.hp.com-->8080
+
+
+4.Window-->Preferences-->Maven-->User Settings
+(1)Global Settings-->C:\Users\liuyongx\Downloads\apache-maven-3.6.2-bin\apache-maven-3.6.2\conf\settings.xml
+(2)User Settings-->C:\Users\liuyongx\Downloads\apache-maven-3.6.2-bin\apache-maven-3.6.2\conf\settings.xml
+(3)Local Repository-->C:\Users\liuyongx\.m2\repository
+
+5.maven代理配置：
+C:\Users\liuyongx\Downloads\apache-maven-3.6.2-bin\apache-maven-3.6.2\conf\settings.xml
+（1）add lines at the middle of  
+<proxies></proxies>
+（2）lines：
+    <proxy>
+      <id>optional</id>
+      <active>true</active>
+      <protocol>http</protocol>
+      <host>proxy.houston.hp.com</host>
+      <port>8080</port>
+      <nonProxyHosts>localhost|127.0.0.1</nonProxyHosts>
+    </proxy>
+    <proxy>
+      <id>optional02</id>
+      <active>true</active>
+      <protocol>https</protocol>
+      <host>proxy.houston.hp.com</host>
+      <port>8080</port>
+      <nonProxyHosts>localhost|127.0.0.1</nonProxyHosts>
+    </proxy>
+
+6.pom.xml
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>practice</groupId>
+  <artifactId>ladp</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <parent> 
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.1.4.RELEASE</version>
+  </parent>
+  <dependencies>
+    <dependency>
+   	  <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>    
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.jayway.jsonpath</groupId>
+      <artifactId>json-path</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+
+7.新建一个Spring Boot项目：
+File-->New-->Maven Project-->Next-->Next-->Group Id(input)/Artifact Id(input)-->Finish
+File-->New-->New Spring Starter Project-->Name(ldap)/Group(com.hpe)/Artifact(com.hpe.lyx)-->Next-->Spring Web-->Finish

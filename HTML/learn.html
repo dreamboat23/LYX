@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 在<style> 元素中你也可以直接添加样式来渲染 HTML 文档-->
+<style type="text/css">
+body {background-color:white}
+h1 {color: red}
+p {color:green}
+</style>
+<!-- 使用 <meta> 元素来描述HTML文档的描述，关键词，作者，字符集等。-->
+<meta charset="utf-8">
+<meta name="description" content="HTML学习">
+<meta name="author" content="lyongxing">
+<title>永兴的HTML学习(HTMLlearn.com)</title>
+<!-- <base> 标签描述了基本的链接地址/链接目标，该标签作为HTML文档中所有的链接标签的默认链接-->
+<base href="C:\JAVA_learn\HTML\" target="_blank">
+</head>
+<body>
+
+<!-- text-align: center将标题置中-->
+<h1 style="font-size: 50px;text-align: center;">HTML学习</h1>
+<h2 style="font-size: 40px">标题的编辑</h2>
+<hr>
+ <!-- 这是一个注释-->
+<p style="font-size: 30px;font-family: sans-serif;"><i>段落的编辑。</i></p>
+<p>学习HTML请点击图片：
+    <a href="https://www.runoob.com/html/html-tutorial.html">
+        <!-- 边框为10的图片链接-->
+        <img src="learn.jpg" width="100" height="100" alt="图片链接" border="10">
+        <!-- 边框为0的图片链接-->
+        <img src="learn.jpg" width="100" height="100" alt="图片链接" border="0">
+    </a>
+    或者点击文字链接：
+    <a href="https://www.runoob.com/html/html-tutorial.html">
+        HTML 教程.
+    </a>
+    <br>
+    浏览图片：
+    <!-- text-decoration: none取消链接下划线-->
+    <!-- background-color: blue设定链接背景颜色为蓝色-->
+    <a href="learn.jpg" style="background-color: blue;text-decoration: none;color: red">
+        picture1
+    </a>
+</p>
+<hr>
+
+<!-- width控制占网页宽度的比例，border控制表格线的粗细-->
+<table width="80%" border="1" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <th align="center" class="标题" height="60">HTML TABLE LEARN</th>
+  </tr>
+  <tr>
+    <td align="right" height="25">2019-12-05---2019-12-06</td>
+  </tr>
+</table>
+
+<table width="80%" border="1" cellspacing="1" cellpadding="4" class="tabtop13" align="center">
+  <tr bgcolor="green">
+    <td colspan="2" class="btbg font-center titfont" rowspan="2">
+        <img src="learn.jpg" width="100" height="100">
+    </td>
+    <td width="10%" class="btbg font-center titfont" rowspan="2">网站链接</td>   
+    <td width="10%" class="btbg font-center titfont" rowspan="2">X3</td>
+    <td width="10%" class="btbg font-center titfont" rowspan="2">X4</td>
+    <td colspan="2" class="btbg font-center titfont">X5</td>
+    <td colspan="2" class="btbg font-center titfont">X6</td>
+    <td colspan="3" class="btbg font-center titfont">X7</td>
+  </tr>
+  <tr>
+    <td width="8%" class="btbg font-center">X5.1</td>
+    <td width="8%" class="btbg font-center">X5.2</td>
+    <td width="8%" class="btbg font-center">X6.1</td>
+    <td width="8%" class="btbg font-center">X6.2</td>
+    <td width="8%" class="btbg font-center">X7.1</td>
+    <td width="8%" class="btbg font-center">X7.2</td>
+    <td width="8%" class="btbg font-center">X7.3</td>
+  </tr>
+  <tr>
+    <td width="7%" rowspan="8" class="btbg1 font-center" bgcolor="green">Y1</td>
+    <td width="7%"  class="btbg2">A</td>
+    <td width="7%"  class="btbg2">
+        <a href="https://www.runoob.com/html/html-intro.html" style="text-decoration: none;">
+        HTML 简介
+        </a>
+    </td>
+    <td>
+        <a href="https://www.runoob.com/try/try.php?filename=tryhtml_intro" style="text-decoration: none">
+        实例一
+        </a>
+    </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="btbg2">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="btbg2">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="btbg2">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="btbg2">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="btbg2">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="btbg2">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<hr>
+ 
+</body>
+</html>
+

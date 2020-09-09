@@ -1,0 +1,144 @@
+一、如何mock一个对象的初始化
+
+        使用PowerMock模拟新对象的创建
+
+        模拟新对象的创建
+        您可能有一个实例化某些对象并使用它的方法。 
+        这种情况下很难自动化，因为您无法控制这个新创建的对象。 
+        这是PowerMock帮助您通过将其替换为可以控制的对象来控制正在创建的对象的地方。
+
+        测试代码
+        下面是一个简单的方法，其中在必须进行单元测试的方法内创建一个新对象。
+
+        public class PowerMockDemo {
+         
+            public Point publicMethod() {
+                return new Point(11, 11);
+            }
+        }
+
+        单元测试
+        我们希望在单元测试中实现的是控制新Point对象的实例化，以便将其替换为我们可以控制的对象。
+
+        要做的第一件事是使用@RunWith（PowerMockRunner.class）告诉JUnit使用PowerMock Runner和使用@PrepareForTest（PowerMockDemo.class）
+        告诉PowerMock进入PowerMockDemo类并为进行模拟做准备，对单元测试进行注释。 
+
+        使用PowerMockito.whenNew（Point.class）.withAnyArguments（）.thenReturn（mockPoint）完成模拟 。
+
+        它告诉PowerMock何时使用任何自变量实例化Point类中的新对象以返回模拟点 。
+        可以根据不同的参数返回不同的对象。用withArguments（）方法创建Point。
+
+        完整代码如下：
+        import org.junit.Before;
+        import org.junit.Test;
+        import org.junit.runner.RunWith;
+        import org.powermock.api.mockito.PowerMockito;
+        import org.powermock.core.classloader.annotations.PrepareForTest;
+        import org.powermock.modules.junit4.PowerMockRunner;
+
+        import static org.hamcrest.CoreMatchers.is;
+        import static org.hamcrest.MatcherAssert.assertThat;
+        import static org.mockito.Mockito.mock;
+
+        @RunWith(PowerMockRunner.class)
+        @PrepareForTest(PowerMockDemo.class)
+        public class PowerMockDemoTest {
+
+            private PowerMockDemo powerMockDemo;
+
+            @Before
+            public void setUp() {
+                powerMockDemo = new PowerMockDemo();
+            }
+
+            @Test
+            public void testMockNew() throws Exception {
+                Point mockPoint = mock(Point.class);
+
+                PowerMockito.whenNew(Point.class)
+                    .withAnyArguments().thenReturn(mockPoint);
+
+                Point actualMockPoint = powerMockDemo.publicMethod();
+
+                assertThat(actualMockPoint, is(mockPoint));
+            }
+        }
+
+        结论
+        PowerMock允许您控制是否要创建新对象，并将其替换为您可以控制的对象。
+
+
+二、如何mock一个方法的调用（有无返回值）
+
+        有返回值：
+            PowerMockito.when(mock.mockedMethod()).thenReturn(value)
+        无返回值：
+            PowerMockito.doNothing().when(mock).method() 
+
+
+三、如何mock一个异常
+
+        像这样使异常发生：
+        when(obj.someMethod()).thenThrow(new AnException()); 
+
+        通过断言您的测试将引发此类异常来验证是否已发生：
+        @Test(expected = AnException.class) 
+
+        或通过普通的模拟验证：
+        verify(obj).someMethod(); 
+
+
+四、如何断言
+
+        例如：
+        @Test
+        public void testSearchList() throws Exception {
+            String searchFilter = "mailMessageStore=ami-db";
+            PowerMockito.when(ldap.searchlist(searchFilter)).thenReturn(null);
+            mvc.perform(MockMvcRequestBuilders.get("/greetinglist"))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andReturn();
+            Mockito.verify(ldap, Mockito.only()).searchlist(searchFilter);//判断97行mock的操作是否成功
+        }
+
+
+五、50行后代码的理解:
+PowerMockito.when(ctx.search(ArgumentMatchers.anyString(), ArgumentMatchers.anyString(),ArgumentMatchers.any(SearchControls.class)))
+        .thenReturn(new MockNamingEnumeration<>(values));
+的Return应与ctx.search()的返回值统一，
+即answer = ctx.search("", searchFilter, searchCtls);NamingEnumeration<?> answer = null;
+但是NamingEnumeration是一个接口，接口是无法实例化的，需要通过下面的代码将NamingEnumeration通过构造方法的形式进行实例化
+继承一个接口，接口原有的方法需要重写
+
+
+	class MockNamingEnumeration<SearchResult> implements NamingEnumeration<SearchResult> {
+		Enumeration<SearchResult> list;
+
+		public MockNamingEnumeration(Vector<SearchResult> values) {
+			list = values.elements();
+		}
+		@Override
+		public boolean hasMoreElements() {
+			return list.hasMoreElements();
+		}
+
+		@Override
+		public SearchResult nextElement() {
+			return list.nextElement();
+		}
+
+		@Override
+		public void close() throws NamingException {
+			list = null;
+		}
+
+		@Override
+		public boolean hasMore() throws NamingException {
+			return list.hasMoreElements();
+		}
+
+		@Override
+		public SearchResult next() throws NamingException {
+			return list.nextElement();
+		}
+	}

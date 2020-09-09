@@ -1,0 +1,240 @@
+spring-boot启动提示Failed to determine suitable jdbc url解决办法：
+        @SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
+        源自https://blog.csdn.net/jlh912008548/article/details/89426696
+
+
+
+JAVA_基本LDAP操作
+        参考https://wenku.baidu.com/view/0ffafe82d1f34693daef3e39.html
+
+
+
+JdbcTemplate功能与用法总结
+        参考https://blog.csdn.net/moxiaomo0804/article/details/92804685
+        1、定义目标类，提供get,set,tostring方法
+
+                public class User {
+                    private Long uid;
+                    private String uname;
+                    private String upwd;
+                    }
+
+        2、编写目标类dao层接口
+
+                public interface UserDao {
+                    int add(User user);
+                    int delete(Long uid);
+                    int update(User user);
+                    User queryById(Long uid);
+                    List<User> queryAll();
+                    List<User> queryByPage();
+                    List<User> queryByPage(int currentPage, int pageSize);
+                    Long queryByCount();
+                }
+
+        3、目标类dao层实现需要继承JdbcDaoSupport 以达到在配置文件中为实现类注入数据库
+
+        让RoleDaoImpl 继承 JdbcDaoSupport,
+        因为(org.springframework.jdbc.core.support.JdbcDaoSupport)类提供了JdbcTemplate对象以及对应的获取和设置方法.
+        不用自己在实现类中添加JdbcTemplate变量!!（getJdbcTemplate前没有this也可以）
+
+                /*
+                 * dao实现类继承JdbcDaoSupport 然后注入数据源datasource
+                 */
+                public class UserDaoImpl extends JdbcDaoSupport implements UserDao{
+                 
+                    /*private JdbcTemplate template;	
+                    public JdbcTemplate getTemplate() {
+                        return template;
+                    }
+                    public void setTemplate(JdbcTemplate template) {
+                        this.template = template;
+                    }
+                */
+                    @Override
+                    public int add(User user) {
+                        String sql = "insert into tb_user values(?,?,?)";
+                        /*int num = this.getTemplate().update(sql, user.getUid(),user.getUname(),user.getUpwd());*/
+                        int num = this.getJdbcTemplate().update(sql, user.getUid(),user.getUname(),user.getUpwd());
+                        return num;
+                    }
+                 
+                    @Override
+                    public int delete(Long uid) {
+                        String sql = "delete from tb_user where uid=?";
+                        int num = this.getJdbcTemplate().update(sql, uid);
+                        return num;
+                    }
+                    @Override
+                    public int update(User user) {
+                        String sql = "update tb_user set"
+                                +"uname=?,"
+                                +"upwd=? where uid=?";
+                        return this.getJdbcTemplate().update(sql,
+                                user.getUname(),
+                                user.getUpwd(),
+                                user.getUid());
+                    }
+                    //通过sql以及uid来查询
+                    @Override
+                    public User queryById(Long uid) {
+                        String sql = "select * from tb_user where uid=?";
+                        User user = this.getJdbcTemplate().queryForObject(sql, new BeanPropertyRowMapper<User>(User.class),uid);
+                        return user;
+                    }
+                 
+                    @Override
+                    public List<User> queryAll() {
+                        String sql = "select * from tb_user";	
+                        return this.getJdbcTemplate().query(sql,  new BeanPropertyRowMapper<User>(User.class));
+                    }
+                 
+                    @Override
+                    public List<User> queryByPage(int currentPage,int pageSize) {
+                        String sql = "select * from tb_user limit ?,?";
+                        return this.getJdbcTemplate().query(sql, new BeanPropertyRowMapper<User>(User.class),(currentPage-1)*pageSize,pageSize);
+                        
+                    }
+                 
+                    @Override
+                    public List<User> queryByPage() {
+                        // TODO Auto-generated method stub
+                        return null;
+                    }
+                    @Override
+                    public Long queryByCount() {
+                        String sql = "select count(*) from tb_user";
+                        return this.getJdbcTemplate().queryForObject(sql,new  SingleColumnRowMapper<Long>(Long.class));
+                    }
+                }
+
+
+
+queryForObject
+        参考https://translate.google.com/translate?hl=zh-CN&sl=en&u=https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html&prev=search
+                  @Nullable
+                 public <T> T queryForObject（ 字符串 sql，
+                                                       RowMapper <T> rowMapper）
+                                               抛出DataAccessException 
+                从接口： JdbcOperations复制的描述
+                在给定静态SQL的情况下执行查询，并通过RowMapper将单个结果行映射到结果对象。
+                使用JDBC语句，而不是PreparedStatement。 如果要使用PreparedStatement执行静态查询，请使用带有null作为参数数组的重载JdbcOperations.queryForObject(String, RowMapper, Object...)方法。
+
+                指定者：
+                接口JdbcOperations
+                参数：
+                sql要执行的SQL查询
+                rowMapper一种回调，每行将映射一个对象
+                返回值：
+                单个映射的对象（如果给定的RowMapper返回null，则可以为null）
+                抛出：
+                IncorrectResultSizeDataAccessException如果查询未完全返回一行
+                DataAccessException如果执行查询有任何问题
+                也可以看看：
+                JdbcOperations.queryForObject(String, Object[], RowMapper)
+
+
+
+JavaBean
+        参考https://www.runoob.com/jsp/jsp-javabean.html
+
+        JavaBean 与其它 Java 类相比而言独一无二的特征：
+                提供一个默认的无参构造函数。
+                需要被序列化并且实现了 Serializable 接口。
+                可能有一系列可读写属性。
+                可能有一系列的 getter 或 setter 方法。
+
+        javabean实例：
+
+                        package com.example.lyx;
+
+                        import java.util.Date;
+
+                        public class User {
+
+                            private String loginId;
+                            private int nodeId;
+                            private String authPw;
+                            private Date updateTime;
+                            private String mdn;
+
+                            @Override
+                            public String toString() {
+                                return "User [loginId=" + loginId + ", nodeId=" + nodeId + ", authPw=" + authPw + ", updateTime=" + updateTime
+                                        + ", mdn=" + mdn + ", mailAddr=" + mailAddr + ", serviceId=" + serviceId + ", webMailUseFlg="
+                                        + webMailUseFlg + "]";
+                            }
+                            private String mailAddr;
+
+                            public String getLoginId() {
+                                return loginId;
+                            }
+                            public void setLoginId(String loginId) {
+                                this.loginId = loginId;
+                            }
+                            public int getNodeId() {
+                                return nodeId;
+                            }
+                            public void setNodeId(int nodeId) {
+                                this.nodeId = nodeId;
+                            }
+                            public String getAuthPw() {
+                                return authPw;
+                            }
+                            public void setAuthPw(String authPw) {
+                                this.authPw = authPw;
+                            }
+                            public Date getUpdateTime() {
+                                return updateTime;
+                            }
+                            public void setUpdateTime(Date updateTime) {
+                                this.updateTime = updateTime;
+                            }
+                            public String getMdn() {
+                                return mdn;
+                            }
+                            public void setMdn(String mdn) {
+                                this.mdn = mdn;
+                            }
+                            public String getMailAddr() {
+                                return mailAddr;
+                            }
+                            public void setMailAddr(String mailAddr) {
+                                this.mailAddr = mailAddr;
+                            }
+                            public int getServiceId() {
+                                return serviceId;
+                            }
+                            public void setServiceId(int serviceId) {
+                                this.serviceId = serviceId;
+                            }
+                            public int getWebMailUseFlg() {
+                                return webMailUseFlg;
+                            }
+                            public void setWebMailUseFlg(int webMailUseFlg) {
+                                this.webMailUseFlg = webMailUseFlg;
+                            }
+                            private int serviceId;
+                            private int webMailUseFlg;
+                        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
