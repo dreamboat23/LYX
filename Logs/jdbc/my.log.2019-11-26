@@ -1,0 +1,20 @@
+2019-11-26 10:00:22,177  INFO JdbcApplication:55 ---- Starting JdbcApplication on LIUYONGX10 with PID 1564 (C:\JAVA_learn\Java-practice\practices\file\target\classes started by liuyongx in C:\JAVA_learn\Java-practice\practices\file)
+2019-11-26 10:00:22,189 DEBUG JdbcApplication:56 ---- Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+2019-11-26 10:00:22,190  INFO JdbcApplication:651 ---- No active profile set, falling back to default profiles: default
+2019-11-26 10:00:25,414  INFO JdbcApplication:61 ---- Started JdbcApplication in 3.839 seconds (JVM running for 4.611)
+2019-11-26 10:02:25,306  INFO JdbcApplication:55 ---- Starting JdbcApplication on LIUYONGX10 with PID 18840 (C:\JAVA_learn\Java-practice\practices\file\target\classes started by liuyongx in C:\JAVA_learn\Java-practice\practices\file)
+2019-11-26 10:02:25,310 DEBUG JdbcApplication:56 ---- Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+2019-11-26 10:02:25,312  INFO JdbcApplication:651 ---- No active profile set, falling back to default profiles: default
+2019-11-26 10:02:28,138  INFO JdbcApplication:61 ---- Started JdbcApplication in 3.416 seconds (JVM running for 4.185)
+2019-11-26 10:07:18,293  INFO JdbcApplication:55 ---- Starting JdbcApplication on LIUYONGX10 with PID 2768 (C:\JAVA_learn\Java-practice\practices\file\target\classes started by liuyongx in C:\JAVA_learn\Java-practice\practices\file)
+2019-11-26 10:07:18,295 DEBUG JdbcApplication:56 ---- Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+2019-11-26 10:07:18,297  INFO JdbcApplication:651 ---- No active profile set, falling back to default profiles: default
+2019-11-26 10:07:21,070  INFO JdbcApplication:61 ---- Started JdbcApplication in 3.368 seconds (JVM running for 4.138)
+2019-11-26 10:08:15,392  INFO JdbcApplication:55 ---- Starting JdbcApplication on LIUYONGX10 with PID 4588 (C:\JAVA_learn\Java-practice\practices\file\target\classes started by liuyongx in C:\JAVA_learn\Java-practice\practices\file)
+2019-11-26 10:08:15,395 DEBUG JdbcApplication:56 ---- Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+2019-11-26 10:08:15,396  INFO JdbcApplication:651 ---- No active profile set, falling back to default profiles: default
+2019-11-26 10:08:18,414  INFO JdbcApplication:61 ---- Started JdbcApplication in 3.655 seconds (JVM running for 4.475)
+2019-11-26 10:32:43,955  INFO JdbcApplication:55 ---- Starting JdbcApplication on LIUYONGX10 with PID 16852 (C:\JAVA_learn\Java-practice\practices\file\target\classes started by liuyongx in C:\JAVA_learn\Java-practice\practices\file)
+2019-11-26 10:32:43,962 DEBUG JdbcApplication:56 ---- Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+2019-11-26 10:32:43,963  INFO JdbcApplication:651 ---- No active profile set, falling back to default profiles: default
+2019-11-26 10:32:46,851  INFO JdbcApplication:61 ---- Started JdbcApplication in 3.521 seconds (JVM running for 4.327)

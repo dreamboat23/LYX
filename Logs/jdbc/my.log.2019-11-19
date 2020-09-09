@@ -1,0 +1,11 @@
+2019-11-19 14:09:00,242  INFO JdbcController:36 ---- 输出info了
+2019-11-19 14:09:00,248 DEBUG JdbcController:38 ---- bug！
+2019-11-19 14:09:00,250 ERROR JdbcController:40 ---- 输出error了
+2019-11-19 14:11:35,302  INFO DbUtil:43 ---- 输出search()的info
+2019-11-19 14:11:36,802  INFO JdbcController:36 ---- 输出info了
+2019-11-19 14:11:36,803 DEBUG JdbcController:38 ---- bug！
+2019-11-19 14:11:36,803 ERROR JdbcController:40 ---- 输出error了
+2019-11-19 14:13:58,106  INFO DbUtil:43 ---- 输出search()的info
+2019-11-19 14:13:59,607  INFO JdbcController:36 ---- 输出info了
+2019-11-19 14:13:59,607 DEBUG JdbcController:38 ---- bug！
+2019-11-19 14:13:59,608 ERROR JdbcController:40 ---- 输出error了

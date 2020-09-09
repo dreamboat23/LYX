@@ -1,0 +1,6 @@
+student个数:4
+and个数:2
+yanglin个数:1
+lirui个数:1
+liuyongxing个数:1
+chenjidou个数:1

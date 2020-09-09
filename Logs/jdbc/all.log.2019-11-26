@@ -1,0 +1,55 @@
+2019-11-26 10:00:21,789  INFO Version:21 - HV000001: Hibernate Validator 6.0.18.Final
+2019-11-26 10:00:22,177  INFO JdbcApplication:55 - Starting JdbcApplication on LIUYONGX10 with PID 1564 (C:\JAVA_learn\Java-practice\practices\file\target\classes started by liuyongx in C:\JAVA_learn\Java-practice\practices\file)
+2019-11-26 10:00:22,189 DEBUG JdbcApplication:56 - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+2019-11-26 10:00:22,190  INFO JdbcApplication:651 - No active profile set, falling back to default profiles: default
+2019-11-26 10:00:24,341  INFO TomcatWebServer:92 - Tomcat initialized with port(s): 8080 (http)
+2019-11-26 10:00:24,644  INFO ContextLoader:284 - Root WebApplicationContext: initialization completed in 2337 ms
+2019-11-26 10:00:25,025  INFO ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-26 10:00:25,407  INFO TomcatWebServer:204 - Tomcat started on port(s): 8080 (http) with context path ''
+2019-11-26 10:00:25,414  INFO JdbcApplication:61 - Started JdbcApplication in 3.839 seconds (JVM running for 4.611)
+2019-11-26 10:00:32,471  INFO DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2019-11-26 10:00:32,489  INFO DispatcherServlet:547 - Completed initialization in 17 ms
+2019-11-26 10:02:24,940  INFO Version:21 - HV000001: Hibernate Validator 6.0.18.Final
+2019-11-26 10:02:25,306  INFO JdbcApplication:55 - Starting JdbcApplication on LIUYONGX10 with PID 18840 (C:\JAVA_learn\Java-practice\practices\file\target\classes started by liuyongx in C:\JAVA_learn\Java-practice\practices\file)
+2019-11-26 10:02:25,310 DEBUG JdbcApplication:56 - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+2019-11-26 10:02:25,312  INFO JdbcApplication:651 - No active profile set, falling back to default profiles: default
+2019-11-26 10:02:27,319  INFO TomcatWebServer:92 - Tomcat initialized with port(s): 8080 (http)
+2019-11-26 10:02:27,526  INFO ContextLoader:284 - Root WebApplicationContext: initialization completed in 2122 ms
+2019-11-26 10:02:27,811  INFO ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-26 10:02:28,135  INFO TomcatWebServer:204 - Tomcat started on port(s): 8080 (http) with context path ''
+2019-11-26 10:02:28,138  INFO JdbcApplication:61 - Started JdbcApplication in 3.416 seconds (JVM running for 4.185)
+2019-11-26 10:02:33,205  INFO DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2019-11-26 10:02:33,221  INFO DispatcherServlet:547 - Completed initialization in 15 ms
+2019-11-26 10:07:17,922  INFO Version:21 - HV000001: Hibernate Validator 6.0.18.Final
+2019-11-26 10:07:18,293  INFO JdbcApplication:55 - Starting JdbcApplication on LIUYONGX10 with PID 2768 (C:\JAVA_learn\Java-practice\practices\file\target\classes started by liuyongx in C:\JAVA_learn\Java-practice\practices\file)
+2019-11-26 10:07:18,295 DEBUG JdbcApplication:56 - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+2019-11-26 10:07:18,297  INFO JdbcApplication:651 - No active profile set, falling back to default profiles: default
+2019-11-26 10:07:20,299  INFO TomcatWebServer:92 - Tomcat initialized with port(s): 8080 (http)
+2019-11-26 10:07:20,506  INFO ContextLoader:284 - Root WebApplicationContext: initialization completed in 2090 ms
+2019-11-26 10:07:20,778  INFO ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-26 10:07:21,066  INFO TomcatWebServer:204 - Tomcat started on port(s): 8080 (http) with context path ''
+2019-11-26 10:07:21,070  INFO JdbcApplication:61 - Started JdbcApplication in 3.368 seconds (JVM running for 4.138)
+2019-11-26 10:07:23,931  INFO DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2019-11-26 10:07:23,948  INFO DispatcherServlet:547 - Completed initialization in 15 ms
+2019-11-26 10:08:15,001  INFO Version:21 - HV000001: Hibernate Validator 6.0.18.Final
+2019-11-26 10:08:15,392  INFO JdbcApplication:55 - Starting JdbcApplication on LIUYONGX10 with PID 4588 (C:\JAVA_learn\Java-practice\practices\file\target\classes started by liuyongx in C:\JAVA_learn\Java-practice\practices\file)
+2019-11-26 10:08:15,395 DEBUG JdbcApplication:56 - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+2019-11-26 10:08:15,396  INFO JdbcApplication:651 - No active profile set, falling back to default profiles: default
+2019-11-26 10:08:17,584  INFO TomcatWebServer:92 - Tomcat initialized with port(s): 8080 (http)
+2019-11-26 10:08:17,810  INFO ContextLoader:284 - Root WebApplicationContext: initialization completed in 2322 ms
+2019-11-26 10:08:18,102  INFO ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-26 10:08:18,409  INFO TomcatWebServer:204 - Tomcat started on port(s): 8080 (http) with context path ''
+2019-11-26 10:08:18,414  INFO JdbcApplication:61 - Started JdbcApplication in 3.655 seconds (JVM running for 4.475)
+2019-11-26 10:08:21,284  INFO DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2019-11-26 10:08:21,300  INFO DispatcherServlet:547 - Completed initialization in 16 ms
+2019-11-26 10:32:43,554  INFO Version:21 - HV000001: Hibernate Validator 6.0.18.Final
+2019-11-26 10:32:43,955  INFO JdbcApplication:55 - Starting JdbcApplication on LIUYONGX10 with PID 16852 (C:\JAVA_learn\Java-practice\practices\file\target\classes started by liuyongx in C:\JAVA_learn\Java-practice\practices\file)
+2019-11-26 10:32:43,962 DEBUG JdbcApplication:56 - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+2019-11-26 10:32:43,963  INFO JdbcApplication:651 - No active profile set, falling back to default profiles: default
+2019-11-26 10:32:46,016  INFO TomcatWebServer:92 - Tomcat initialized with port(s): 8080 (http)
+2019-11-26 10:32:46,241  INFO ContextLoader:284 - Root WebApplicationContext: initialization completed in 2161 ms
+2019-11-26 10:32:46,528  INFO ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-26 10:32:46,848  INFO TomcatWebServer:204 - Tomcat started on port(s): 8080 (http) with context path ''
+2019-11-26 10:32:46,851  INFO JdbcApplication:61 - Started JdbcApplication in 3.521 seconds (JVM running for 4.327)
+2019-11-26 10:32:50,615  INFO DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2019-11-26 10:32:50,649  INFO DispatcherServlet:547 - Completed initialization in 28 ms
