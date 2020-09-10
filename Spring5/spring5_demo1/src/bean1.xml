@@ -4,5 +4,28 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- 1配置User对象创建 -->
-	<bean id="user" class="com.yongx.spring5.User"></bean>
+	<!-- 注册一个User对象，Spring会自动创建这个Person对象 -->
+	<!-- 
+		一个Bean标签可以注册一个组件（对象、类）
+		class：写要注册组件的全类名
+		id：这个对象的唯一标识
+	 -->
+	<bean id="user" class="com.yongx.spring5.User">
+
+		<!-- 2set方法注入属性 -->
+		<!-- 使用property标签为User对象赋值
+		 		name = "lastName" ： 指定属性名
+		 		value = "李四"  ： 为该属性赋值
+		  -->
+		<property name="userName" value="lyx"></property>
+		<property name="userAge" value="23"></property>
+		
+	</bean>
+
+	<!-- 3有参构造注入属性 -->
+	<bean id="orders" class="com.yongx.spring5.Orders">
+		<constructor-arg name="oName" value="computer"></constructor-arg>
+		<constructor-arg name="oAddress" value="CQ"></constructor-arg>
+	</bean>
+
 </beans>
