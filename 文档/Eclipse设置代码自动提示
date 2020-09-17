@@ -1,0 +1,5 @@
+第一步：打开Eclipse --> Window --> Preferences
+
+第二步：点击Java --> 打开Editor --> 点击Content Assist
+
+第三步：设置Auto activition triggers for Java 的值为 .abcdefghijklmnopqrstuvwxyz (记得别忘记那个小数点了 不然打个小数点没提示) 然后点击Apply保存配置即可。
