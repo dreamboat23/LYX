@@ -1,0 +1,11 @@
+https://jingyan.baidu.com/article/90bc8fc8af39aff653640c28.html
+方法Ⅰ
+(1)在Eclipse新建一个Java工程，创建带有只包含属性的普通Java类
+(2)右键选中【Resource】，出现自动生成代码的选项
+(3)选中【Generate Getters and Setters】,将自己生成getXxx和setXxx方法，选中需要生成的属性，点击【OK】即可
+(4)选中【Generate Constructors From SuperClass】,即可生成无参构造函数
+
+方法Ⅱ
+(1)快捷键【Alt+Shirt+S】
+(2)选中【Generate Getters and Setters】,将自己生成getXxx和setXxx方法，选中需要生成的属性，点击【OK】即可
+(3)选中【Generate Constructors From SuperClass】,即可生成无参构造函数
