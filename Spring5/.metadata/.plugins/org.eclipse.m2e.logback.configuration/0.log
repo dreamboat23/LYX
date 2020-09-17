@@ -28,3 +28,4 @@ org.apache.maven.project.ProjectBuildingException: Some problems were encountere
 2020-09-10 11:35:18,624 [Worker-110: Updating Maven dependencies for project 'spring5_demo1'] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\liuyongx\OneDrive - Hewlett Packard Enterprise\A_WORK\LYX\Spring5\spring5_demo1
 2020-09-10 11:35:18,625 [Worker-110: Updating Maven dependencies for project 'spring5_demo1'] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B eclipse:clean eclipse:eclipse
 2020-09-10 13:21:01,096 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2020-09-17 09:53:09,865 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.

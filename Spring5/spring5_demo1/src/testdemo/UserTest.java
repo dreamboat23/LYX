@@ -20,7 +20,10 @@ public class UserTest {
 		//2 获取配置创建的对象
 		//容器帮我们创建好对象了，根据xml中的id拿值
 		User user = context.getBean("user", User.class);
-		System.out.println(user);
+		User user2 = context.getBean("user2", User.class);
+		System.out.println("通过配置文件创建的对象1： " + user);
+		System.out.println("通过配置文件创建的对象2： " + user2);
+		System.out.print("通过配置文件创建的对象1调用User类的add方法： ");
 		user.add();
 	}
 }
